@@ -1,0 +1,7 @@
+== Hello World Example
+
+Contains both, standard Kubernets manifests and a Helm chart for comparison.
+
+'''
+[link=http://www.apache.org/licenses/LICENSE-2.0.html]
+image::http://img.shields.io/:license-apache--2.0-blue.svg?style=flat[]
