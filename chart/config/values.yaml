@@ -1,0 +1,15 @@
+ingress:
+  enabled: true
+  hosts:
+    - helm.unguiculus.io
+  tls:
+    - secretName: tls-helm
+      hosts:
+        - helm.unguiculus.io
+
+image:
+  repository: unguiculus/hello-world
+  tag: latest
+  pullPolicy: Always
+
+replicaCount: 1

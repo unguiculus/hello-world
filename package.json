@@ -1,0 +1,15 @@
+{
+    "name": "hello-world",
+    "version": "1.0.0",
+    "description": "Hello World",
+    "main": "index.js",
+    "repository": "git@github.com:unguiculus/hello-world.git",
+    "author": "Reinhard Nägele",
+    "license": "Apache-2.0",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "express": "^4.16.2"
+    }
+}
