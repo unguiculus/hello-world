@@ -1,0 +1,34 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: hello-world-without-helm
+  labels:
+    app: hello-world
+    type: no-helm
+spec:
+  selector:
+    matchLabels:
+      app: hello-world
+      type: no-helm
+  template:
+    metadata:
+      labels:
+        app: hello-world
+        type: no-helm
+    spec:
+      containers:
+        - name: hello-world
+          image: unguiculus/hello-world:latest
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 8081
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: http
