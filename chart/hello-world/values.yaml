@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: nginx
-  tag: stable
+  repository: unguiculus/hello-world
+  tag: 1
   pullPolicy: IfNotPresent
 
 service:

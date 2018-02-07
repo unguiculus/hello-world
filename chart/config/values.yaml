@@ -1,3 +1,6 @@
+
+replicaCount: 1
+
 ingress:
   enabled: true
   hosts:
@@ -6,10 +9,3 @@ ingress:
     - secretName: tls-helm
       hosts:
         - helm.unguiculus.io
-
-image:
-  repository: unguiculus/hello-world
-  tag: latest
-  pullPolicy: Always
-
-replicaCount: 1
