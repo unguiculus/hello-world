@@ -4,7 +4,8 @@ replicaCount: 1
 ingress:
   enabled: true
   hosts:
-    - helm.unguiculus.io
+    - host: helm.unguiculus.io
+      paths: []
   tls:
     - secretName: tls-helm
       hosts:

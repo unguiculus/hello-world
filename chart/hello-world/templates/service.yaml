@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ template "hello-world.fullname" . }}
+  name: {{ include "hello-world.fullname" . }}
   labels:
-    app: {{ template "hello-world.name" . }}
-    chart: {{ template "hello-world.chart" . }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    app.kubernetes.io/name: {{ include "hello-world.name" . }}
+    helm.sh/chart: {{ include "hello-world.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -15,5 +15,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: {{ template "hello-world.name" . }}
-    release: {{ .Release.Name }}
+    app.kubernetes.io/name: {{ include "hello-world.name" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
