@@ -6,7 +6,7 @@ image:
   pullPolicy: IfNotPresent
 
 nameOverride: ""
-fullnameOverride: hello-world
+fullnameOverride: ""
 
 service:
   type: NodePort
