@@ -3,10 +3,7 @@ kind: Service
 metadata:
   name: {{ include "hello-world.fullname" . }}
   labels:
-    app.kubernetes.io/name: {{ include "hello-world.name" . }}
-    helm.sh/chart: {{ include "hello-world.chart" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
-    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    {{- include "hello-world.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -18,5 +15,4 @@ spec:
       {{- end }}
       protocol: TCP
   selector:
-    app.kubernetes.io/name: {{ include "hello-world.name" . }}
-    app.kubernetes.io/instance: {{ .Release.Name }}
+    {{- include "hello-world.selectorLabels" . | nindent 4 }}
